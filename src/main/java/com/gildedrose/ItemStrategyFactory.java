@@ -1,9 +1,6 @@
 package com.gildedrose;
 
-import com.gildedrose.strategies.AgedBrieStrategy;
-import com.gildedrose.strategies.BackstagePassStrategy;
-import com.gildedrose.strategies.NormalItemStrategy;
-import com.gildedrose.strategies.SulfurasStrategy;
+import com.gildedrose.strategies.*;
 
 public class ItemStrategyFactory {
     public static ItemStrategy getStrategy(Item item) {
@@ -14,6 +11,8 @@ public class ItemStrategyFactory {
                 return new SulfurasStrategy();
             case "Backstage passes to a TAFKAL80ETC concert":
                 return new BackstagePassStrategy();
+            case "Conjured Mana Cake":
+                return new ConjuredItemStrategy();
             default:
                 return new NormalItemStrategy();
         }
